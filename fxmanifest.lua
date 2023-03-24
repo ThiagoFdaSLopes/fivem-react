@@ -14,8 +14,17 @@ games {
 
 ui_page 'web/build/index.html'
 
-client_script "client/**/*"
-server_script "server/**/*"
+client_scripts {
+	"@vrp/lib/utils.lua",
+  "@PolyZone/client.lua",
+  "client/**/*",
+}
+server_scripts {
+  "@vrp/lib/vehicles.lua",
+	"@vrp/lib/itemlist.lua",
+	"@vrp/lib/utils.lua",
+  "server/**/*",
+}
 
 files {
 	'web/build/index.html',
