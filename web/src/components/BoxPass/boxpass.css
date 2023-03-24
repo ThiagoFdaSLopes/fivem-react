@@ -1,0 +1,9 @@
+section {
+  position: fixed;
+  top: 10rem;
+  left: 5rem;
+  width: 50%;
+  height: 45rem;
+  border-radius: 10px;
+  background-color: rgba(138, 43, 226, 0.8);
+}
