@@ -3,9 +3,9 @@ import {useNuiEvent} from "../hooks/useNuiEvent";
 import {fetchNui} from "../utils/fetchNui";
 import { isEnvBrowser } from "../utils/misc";
 
-const VisibilityCtx = createContext<VisibilityProviderValue | null>(null)
+export const VisibilityCtx = createContext<VisibilityProviderValue | null>(null)
 
-interface VisibilityProviderValue {
+export interface VisibilityProviderValue {
   setVisible: (visible: boolean) => void
   visible: boolean
 }
