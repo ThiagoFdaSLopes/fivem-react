@@ -1,6 +1,6 @@
 import React from 'react'
 import * as BoxPass from './boxpass'
-import HeaderBoxPass from '../HeaderBoxPass/HeaderBoxPass'
+import HeaderBoxPass from '../HeaderBoxPass'
 import LevelXP from '../LevelXP/LevelXP';
 
 const Boxpass: React.FC = () => {
