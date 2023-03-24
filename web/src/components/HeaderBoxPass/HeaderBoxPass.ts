@@ -43,7 +43,7 @@ export const TitleDiv = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: rgb(244, 149, 25);
+  /* background-color: rgb(244, 149, 25); */
 `
 
 export const TagsPDiv = styled.div`
