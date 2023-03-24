@@ -1,7 +1,7 @@
 import React, { Context, useContext, useState } from 'react'
 import { VisibilityCtx, VisibilityProviderValue } from '../../providers/VisibilityProvider'
 import * as Hd from './header'
-import Nav from '../Nav/Nav'
+import Nav from '../Nav'
 
 const Header: React.FC =() => {
 
