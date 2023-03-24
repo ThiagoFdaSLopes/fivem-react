@@ -1,0 +1,47 @@
+.HeaderBoxPass {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 7.5rem;
+  border-radius: 10px;
+  /* background-color: rgb(244, 149, 25); */
+}
+.pBattePass {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 52px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+
+img {
+  width: 120px;
+  margin-left: 2rem;
+}
+
+.seasonPass {
+  padding: 0;
+  margin: 0;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
+
+.seasonPass > span {
+  color: aqua;
+}
+
+.title {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  height: 100%;
+}
