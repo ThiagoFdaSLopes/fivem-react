@@ -1,16 +1,16 @@
 import React, { Context, useContext, useState } from 'react'
 import { VisibilityCtx, VisibilityProviderValue } from '../../providers/VisibilityProvider'
-import Header from '../Header/Header'
+import Header from '../Header'
 import Boxpass from '../BoxPass'
-import './main.css'
+import * as M from './main'
 
 const Main: React.FC =() => {
 
   return (
-    <main className='main'>
+    <M.Main>
       <Header />
       <Boxpass />
-    </main>
+    </M.Main>
   )
 }
 
