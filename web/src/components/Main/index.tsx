@@ -1,7 +1,7 @@
 import React, { Context, useContext, useState } from 'react'
 import { VisibilityCtx, VisibilityProviderValue } from '../../providers/VisibilityProvider'
 import Header from '../Header/Header'
-import Boxpass from '../BoxPass/Boxpass'
+import Boxpass from '../BoxPass'
 import './main.css'
 
 const Main: React.FC =() => {
