@@ -1,9 +1,14 @@
 import React from 'react'
 import * as Progress from './levelxp'
 
-const LevelXP: React.FC = () => {
+interface Props {
+  color: string;
+}
+
+
+const LevelXP: React.FC<Props> = ({ color }) => {
   return (
-    <Progress.ProgressBar></Progress.ProgressBar>
+    <Progress.ProgressBar color={color}/>
   )
 }
 
