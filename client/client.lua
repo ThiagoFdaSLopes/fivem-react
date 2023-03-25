@@ -19,7 +19,7 @@ local function toggleNuiFrame(shouldShow)
   SendReactMessage('setVisible', shouldShow)
 end
 
-RegisterCommand('show-nui', function()
+RegisterCommand('gamepass', function()
   toggleNuiFrame(true)
 end)
 
