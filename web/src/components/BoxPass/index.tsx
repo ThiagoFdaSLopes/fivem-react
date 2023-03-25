@@ -7,7 +7,7 @@ const Boxpass: React.FC = () => {
   return (
     <BoxPass.Container>
       <HeaderBoxPass />
-      <LevelXP />
+      <LevelXP color={'purple'}/>
     </BoxPass.Container>
   )
 }
