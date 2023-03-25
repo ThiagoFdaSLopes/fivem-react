@@ -1,7 +1,6 @@
 import React from 'react'
 import * as Op from './options'
 import OptionsButton from '../OptionsButtons'
-import './teste.css'
 
 const Options: React.FC = () => {
   return (
