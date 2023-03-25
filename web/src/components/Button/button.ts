@@ -38,4 +38,5 @@ export const ButtonStyle = styled.button`
       -webkit-transform-origin: center center;
       -webkit-transform: scale(1, 1);
     }
+  }
 `;
