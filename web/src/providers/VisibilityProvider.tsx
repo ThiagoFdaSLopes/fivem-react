@@ -10,6 +10,7 @@ export interface VisibilityProviderValue {
   visible: boolean
   sBattlePass: boolean
   showBattlePass: () => void
+  handleToogle: () => void
 }
 
 // This should be mounted at the top level of your application, it is currently set to
@@ -17,6 +18,10 @@ export interface VisibilityProviderValue {
 export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [visible, setVisible] = useState(false)
   const [sBattlePass, setSBattlePass] = useState(false)
+
+  const handleToogle = () => {
+    fetchNui('hideFrame').then((sucesso) => console.log(sucesso))
+  }
   
   const showBattlePass = () => {
     setSBattlePass(!sBattlePass)
@@ -46,7 +51,8 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         visible,
         sBattlePass,
         showBattlePass,
-        setVisible
+        setVisible,
+        handleToogle
       }}
     >
     <div style={{ visibility: visible ? 'visible' : 'hidden', height: '100%'}}>
