@@ -16,7 +16,7 @@ const ContainerSlick: React.FC = () => {
   };
 
   const newItems = arrayImgs.map((img, index) => (
-    <Items img={ img } index={ index }/>
+    <Items key={index + 1} img={ img } index={ index } onclick={() => console.log(`${img}`)} />
   ))
 
   return (
