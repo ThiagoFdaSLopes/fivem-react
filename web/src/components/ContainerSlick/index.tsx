@@ -16,13 +16,11 @@ const ContainerSlick: React.FC = () => {
   };
 
   const newItems = arrayImgs.map((img, index) => (
-    <Items key={ index + 1 } img={ img } index={ index }/>
+    <Items img={ img } index={ index }/>
   ))
 
   return (
     <Box.ContainerBox>
-
-
       <Slider {...settings}>
           { newItems }
       </Slider>
