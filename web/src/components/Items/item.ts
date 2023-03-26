@@ -17,7 +17,7 @@ export const Container = styled.div`
 export const Index = styled.div`
   width: 10rem;
   height: 3rem;
-  background-color: purple;
+  background-color: #393936;
   color: white;
   text-align: center;
   line-height: 3rem;
