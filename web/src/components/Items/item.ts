@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.button`
   display: flex;
   flex-direction: column;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
   width: 10rem;
   height: 14rem;
   background-color: white;
