@@ -29,11 +29,6 @@ RegisterNUICallback('hideFrame', function(_, cb)
 end)
 
 RegisterNUICallback('getClientData', function(data, cb)
-	local Items = {}
-	local ped = PlayerPedId()
-
-	local inventario,invPeso,invMaxpeso = vSERVER.requestInventory()
-	if inventario then
-		cb({ inventario = inventario, drop = Items, invPeso = invPeso, invMaxpeso = invMaxpeso })
-	end
+	local player = vSERVER.getDataClient()
+	cb({ data = player })
 end)
