@@ -9,6 +9,8 @@ export interface VisibilityProviderValue {
   setVisible: (visible: boolean) => void
   visible: boolean
   sBattlePass: boolean
+  dataPlayer: any
+  setData: () => void
   showBattlePass: () => void
   handleToogle: () => void
 }
@@ -18,14 +20,22 @@ export interface VisibilityProviderValue {
 export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [visible, setVisible] = useState(false)
   const [sBattlePass, setSBattlePass] = useState(false)
+  const [dataPlayer, setDataPlayer] = useState(null)
 
   const handleToogle = () => {
     fetchNui('hideFrame').then((sucesso) => console.log(sucesso))
+  }
+  const setData = async () => {
+    fetchNui("getClientData").then( retData => {
+      console.log(retData)
+      setDataPlayer(retData)
+    })
   }
   
   const showBattlePass = () => {
     setSBattlePass(!sBattlePass)
   }
+  
   useNuiEvent<boolean>('setVisible', setVisible)
 
   // Handle pressing escape/backspace
@@ -50,6 +60,8 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       value={{
         visible,
         sBattlePass,
+        dataPlayer,
+        setData,
         showBattlePass,
         setVisible,
         handleToogle
