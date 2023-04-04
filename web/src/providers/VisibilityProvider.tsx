@@ -5,12 +5,26 @@ import { isEnvBrowser } from "../utils/misc";
 
 export const VisibilityCtx = createContext<VisibilityProviderValue | null>(null)
 
+interface DataPlayer {
+  armour: number,
+  experience: number,
+  health: number,
+  hunger: number,
+  inventory: [],
+  oxigen: number,
+  perm: { perm: boolean },
+  position: { x: number, y: number, z: number }
+  skin: number,
+  stress: number,
+  thirst: number,
+  weight: number,
+}
+
 export interface VisibilityProviderValue {
   setVisible: (visible: boolean) => void
   visible: boolean
   sBattlePass: boolean
-  dataPlayer: any
-  setData: () => void
+  dataPlayer: DataPlayer
   showBattlePass: () => void
   handleToogle: () => void
 }
@@ -18,20 +32,29 @@ export interface VisibilityProviderValue {
 // This should be mounted at the top level of your application, it is currently set to
 // apply a CSS visibility value. If this is non-performant, this should be customized.
 export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+
+  const data: DataPlayer = {
+    armour: 0,
+    experience: 0,
+    health: 0,
+    hunger: 0,
+    inventory: [],
+    oxigen: 0,
+    perm: { perm: false },
+    position: { x: 0, y: 0, z: 0 },
+    skin: 0,
+    stress: 0,
+    thirst: 0,
+    weight: 0,
+  };
+
   const [visible, setVisible] = useState(false)
   const [sBattlePass, setSBattlePass] = useState(false)
-  const [dataPlayer, setDataPlayer] = useState(null)
+  const [dataPlayer, setDataPlayer] = useState<DataPlayer>(data)
 
   const handleToogle = () => {
     fetchNui('hideFrame').then((sucesso) => console.log(sucesso))
   }
-  const setData = async () => {
-    fetchNui("getClientData").then( retData => {
-      console.log(retData)
-      setDataPlayer(retData)
-    })
-  }
-  
   const showBattlePass = () => {
     setSBattlePass(!sBattlePass)
   }
@@ -50,6 +73,13 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       }
     }
 
+    const setData = async () => {
+      fetchNui("getClientData").then( ({ data }) => {
+        return setDataPlayer(data);
+      })
+    }
+    setData()
+
     window.addEventListener("keydown", keyHandler)
 
     return () => window.removeEventListener("keydown", keyHandler)
@@ -61,7 +91,6 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         visible,
         sBattlePass,
         dataPlayer,
-        setData,
         showBattlePass,
         setVisible,
         handleToogle
