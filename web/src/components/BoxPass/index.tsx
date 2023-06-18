@@ -8,7 +8,7 @@ import ContainerSlick from '../ContainerSlick';
 
 const Boxpass: React.FC = () => {
   const { sBattlePass, dataPlayer } = useVisibility();
-  const exp = (dataPlayer.experience/ 100) * 100;
+  const exp = Number(((dataPlayer.experience * 100) / 3000).toFixed(2))
   return (
     <>
     { !sBattlePass ? (
